@@ -1,6 +1,6 @@
 {
   "name": "ci-params",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Params service.",
   "main": "src/params.service.js",
   "authors": [
@@ -21,6 +21,6 @@
     "angular-mocks": "~1.2.28",
     "angular-ui-router": "~0.2.15",
     "lodash": "~3.10.0",
-    "ci-utils": "git@cityindex.unfuddle.com:cityindex/ciutils.git#~0.2.0"
+    "ci-utils": "git@github.com:pablonp/ci-utils.git#~0.2.0"
   }
 }
