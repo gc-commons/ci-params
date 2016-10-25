@@ -30,9 +30,11 @@
             }
           });
 
-          angular.forEach($location.search(),function(value, key){
-            $location.search(key, null);
-          });
+          self.hideParams = function() {
+            angular.forEach($location.search(), function (value, key) {
+              $location.search(key, null);
+            });
+          };
 
         }
 
