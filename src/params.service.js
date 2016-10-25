@@ -9,8 +9,9 @@
     .module('ci_params', ['ci_utils'])
     .factory('paramsSrv', [
       '$cookies',
+      '$location',
       'utilsSrv',
-      function($cookies, utilsSrv) {
+      function($cookies, $location, utilsSrv) {
         var self = {};
 
         init();
@@ -28,6 +29,11 @@
               self[key] = self[key] || value;
             }
           });
+
+          angular.forEach($location.search(),function(value, key){
+            $location.search(key, null);
+          });
+
         }
 
         return self;
