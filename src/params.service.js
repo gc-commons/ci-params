@@ -11,7 +11,8 @@
       '$cookies',
       '$location',
       'utilsSrv',
-      function($cookies, $location, utilsSrv) {
+      '$window',
+      function($cookies, $location, utilsSrv, $window) {
         var self = {};
 
         init();
@@ -22,11 +23,12 @@
         function init() {
           _.each(utilsSrv.location().queryString(), function(value, key) {
             self[key.toUpperCase()] = value.toString();
+            $window.sessionStorage.setItem(key.toUpperCase(), value.toString());
           });
 
           _.each($cookies, function(value, key) {
             if (value != 'undefined' && key != 'CLC') {
-              self[key] = self[key] || value;
+              self[key] = self[key] || $window.sessionStorage.getItem(key) || value;
             }
           });
 
