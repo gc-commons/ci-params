@@ -37,7 +37,10 @@
               $location.search(key, null);
             });
           };
-
+          
+          self.updateParameter= function(key, value) {
+              $window.sessionStorage.setItem(key.toUpperCase(), value.toString());
+          };
         }
 
         return self;
